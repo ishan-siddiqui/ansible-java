@@ -4,3 +4,11 @@ cd /opt
 sudo wget -O nexus.tar.gz https://download.sonatype.com/nexus/3/nexus-3.40.0-03-unix.tar.gz
 sudo tar -xf nexus.tar.gz
 sudo mv nexus-3* nexus
+sudo chown -R ec2-user:ec2-user nexus/ sonatype-work/
+cd nexus/bin
+echo run_as_user=\"ec2-user\" > nexus.rc
+sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+cd /etc/init.d
+sudo chkconfig --add nexus
+sudo chkconfig nexus on
+sudo systemctl start nexus
