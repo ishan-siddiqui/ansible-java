@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Hello world"
+cd /opt
+sudo wget -O nexus.tar.gz https://download.sonatype.com/nexus/3/nexus-3.40.0-03-unix.tar.gz
+sudo tar -xf nexus.tar.gz
+sudo mv nexus-3* nexus
