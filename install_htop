@@ -1,0 +1,4 @@
+#!/bin/bash
+yum search htop
+sudo yum install htop -y 
+yum info htop
