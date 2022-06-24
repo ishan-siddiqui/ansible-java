@@ -11,4 +11,5 @@ sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 cd /etc/init.d
 sudo chkconfig --add nexus
 sudo chkconfig nexus on
-sudo systemctl start nexus
+# sudo systemctl start nexus
+sudo service nexus start
